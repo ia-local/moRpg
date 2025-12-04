@@ -1,0 +1,31 @@
+// _variables.scss
+
+// 1. Gestion du Temps et de la Progression
+// Cette variable doit être INJECTÉE par le backend (Node.js/JS) lors de la compilation SCSS.
+// Ex: $cvnu-day: 1; (Jour 1 - Étudiant)
+// Ex: $cvnu-day: 28; (Jour 28 - Professionnel)
+$cvnu-day: 1; // Valeur par défaut pour la démo
+$total-days: 28;
+$progress: calc($cvnu-day / $total-days); // Progression de 0 à 1
+
+// 2. Définition des Styles (Étudiant vs Professionnel)
+
+// COULEURS
+$color-bg-newbie: #f4f7f9;        // Arrière-plan clair, décontracté
+$color-bg-pro: #0c1a30;           // Arrière-plan sombre, corporatif
+$color-text-newbie: #333;
+$color-text-pro: #f0f0f0;
+
+// BORDURES & OMBRES
+$radius-newbie: 15px;             // Coins arrondis, doux
+$radius-pro: 4px;                 // Coins carrés, précis
+$shadow-newbie: 0 4px 10px rgba(0, 0, 0, 0.1); // Ombre légère
+$shadow-pro: 0 8px 20px rgba(0, 0, 0, 0.3);    // Ombre marquée, profondeur
+
+// TYPOGRAPHIE
+$font-stack-newbie: 'Arial', sans-serif;
+$font-stack-pro: 'Roboto Mono', monospace; // Précision, technique
+
+// ASCI
+$ascii-color-newbie: #0f0;        // Vert classique
+$ascii-color-pro: #00bcd4;        // Cyan/Aqua plus technique

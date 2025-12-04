@@ -1,0 +1,43 @@
+// style.scss (Le fichier servi, compilé à partir de SCSS)
+
+// Import des modules
+@import 'variables';
+@import 'mixins';
+
+/* === GLOBAL & RESET : Progression du 1er au 28e jour === */
+body {
+    // Transition d'arrière-plan (Clair -> Sombre)
+    @include resolve-color(background-color, $color-bg-newbie, $color-bg-pro);
+    
+    // Transition de couleur de texte (Sombre -> Clair)
+    @include resolve-color(color, $color-text-newbie, $color-text-pro);
+    
+    // Transition de police (Arial -> Roboto Mono)
+    font-family: if($progress < 0.5, $font-stack-newbie, $font-stack-pro);
+    transition: background-color 0.5s, color 0.5s; // Ajouter une transition douce
+}
+
+/* === C: Panneaux et Composants === */
+.c-panel {
+    // Transition du rayon de bordure (Arrondi -> Carré)
+    @include resolve-style(border-radius, $radius-newbie, $radius-pro);
+    
+    // Transition de l'ombre
+    // Note: Gérer les ombres est complexe avec l'interpolation. On peut faire une transition d'opacité/flou.
+    box-shadow: $shadow-pro; // Utilisation de l'ombre Pro, mais on peut faire évoluer l'opacité
+    background-color: white; // Maintenir le panneau blanc pour la lisibilité
+}
+
+/* === C: ASCII Display === */
+.c-ascii-display {
+    // Transition de la couleur ASCII (Vert -> Cyan/Aqua technique)
+    @include resolve-color(color, $ascii-color-newbie, $ascii-color-pro);
+    background-color: #111;
+}
+
+/* === C: Boutons === */
+.c-btn {
+    @include resolve-style(border-radius, $radius-newbie, $radius-pro);
+}
+
+// Ajoutez d'autres sélecteurs ici...
