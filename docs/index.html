@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVNU RPG - Tableau de Bord Économique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="l-dashboard">
+        <header class="l-header c-panel">
+            <h1>CVNU - Contrôle Économique (Niv. 1)</h1>
+        </header>
+
+        <main class="l-content">
+            <section class="c-panel c-panel--main">
+                <h2>📈 Statistiques Clés du Cycle (Jour D/28)</h2>
+                <div id="rpg-ascii-output" class="c-ascii-display">
+                    <pre>
+                        Jour D: 1/28 | Niveau CVNU: 1 | Revenu Actuel: 0.00 / Objectif: 750.00
+                        👤 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 📜
+                    </pre>
+                </div>
+                <button class="c-btn c-btn--primary" onclick="showModal('action-modal')">Lancer Opération Recyclage <meta></button>
+            </section>
+
+            <section class="c-panel c-panel--log">
+                <h2>📜 Journal des Transactions (Héros de la Taxe)</h2>
+                <div id="transaction-list">
+                    <p>Transaction 1: Recyclage <meta> (Base: 150.00, Total: 186.00)</p>
+                    <p>Transaction 2: Recyclage <meta> (Base: 155.00, Total: 192.20)</p>
+                    </div>
+                <nav id="pagination-container" class="c-pagination-wrapper">
+                    </nav>
+            </section>
+        </main>
+    </div>
+
+    <div id="action-modal" class="c-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="c-modal__backdrop" onclick="hideModal('action-modal')"></div>
+        <div class="c-modal__content">
+            <h3 id="modalTitle">Opération Économique</h3>
+            <p>Êtes-vous sûr de vouloir lancer l'opération de recyclage de <meta>? Ceci consommera des ressources `data/soup.js`.</p>
+            <div class="c-modal__actions">
+                <button class="c-btn c-btn--success">Confirmer le Recyclage</button>
+                <button class="c-btn c-btn--secondary" onclick="hideModal('action-modal')">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVNU 1D RPG - Mobile First</title>
+    <style>
+        /* CSS de base Mobile First */
+        body {
+            font-family: monospace; /* Pour le style ASCII */
+            background-color: #111;
+            color: #0f0; /* Vert ASCII */
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rpg-container {
+            width: 100%;
+            max-width: 450px; /* Simule un écran de téléphone vertical */
+            margin: 0 auto;
+            border: 1px solid #0f0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        pre {
+            white-space: pre-wrap; /* Maintient le formatage ASCII */
+            word-wrap: break-word;
+        }
+
+        /* Responsive Mobile First: Les styles ci-dessus sont les styles par défaut (mobiles).
+           On ajouterait des media queries pour les écrans plus grands AU BESOIN. */
+    </style>
+</head>
+<body>
+    <div class="rpg-container">
+        <h1>[CVNU] 1D RPG - J:1</h1>
+        <p>Statut du CVNU : Prêt pour le recyclage des &lt;meta&gt;...</p>
+        <pre id="game-output">
+            [Chargement du moteur ASCII...]
+            👤 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 📜
+        </pre>
+        <button onclick="startGame()">Démarrer le Cycle</button>
+    </div>
+    
+    <script>
+        // Le code frontend du RPG sera placé ici pour l'interaction.
+        function startGame() {
+            document.getElementById('game-output').innerText = 'Cycle de travail [SEO Recyclage] en cours...';
+            // Ici, vous intégreriez la communication avec le backend (Express/llama-3.1-8b-instant)
+        }
+    </script>
+</body>
+</html>
